@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-  bool _isMealFav(String id){
+  bool _isMealFav(String id) {
     return _favouriteMeals.any((meal) => meal.id == id);
   }
 
@@ -94,8 +94,14 @@ class _MyAppState extends State<MyApp> {
         '/': (ctx) => TabsScreen(_favouriteMeals),
         CategoryMealsScreen.routeName: (ctx) =>
             CategoryMealsScreen(_availableMeals),
-        MealDetailScreen.routeName: (ctx) => MealDetailScreen(_toggleFavourite, _isMealFav),
-        FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen(
+              _toggleFavourite,
+              _isMealFav,
+            ),
+        FiltersScreen.routeName: (ctx) => FiltersScreen(
+              _filters,
+              _setFilters,
+            ),
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(

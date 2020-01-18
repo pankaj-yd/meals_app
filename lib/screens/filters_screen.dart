@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/screens/tabs_screen.dart';
 
 import '../widgets/main_drawer.dart';
 
@@ -56,6 +57,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     'vegetarian': _vegetarian,
                   },
                 );
+                Navigator.of(context).pushReplacementNamed('/');
               },
             ),
           ],
